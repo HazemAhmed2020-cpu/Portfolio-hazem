@@ -54,7 +54,7 @@ export function createApp(options = {}) {
     db.prepare('INSERT INTO admin(id,password_hash,must_change) VALUES(1,?,1)').run(passwordHash(password));
     if (!options.initialPassword && !process.env.ADMIN_PASSWORD) {
       fs.mkdirSync(path.dirname(accessFile), { recursive: true, mode: 0o700 });
-      fs.writeFileSync(accessFile, `# Private portfolio studio access\n\nOpen the running portfolio and append **/admin** to its address.\n\n- Username: **hazem**\n- Temporary password: \`${password}\`\n\nChange this password in **Settings → Security** after signing in. This file is not served by the website and is excluded from the source archive. Do not upload it to a repository.\n\nIf a browser blocks cookies inside the embedded preview, open the preview in a new tab.\n\nThe GitHub token previously shared in chat was never used and is not stored in this project. Revoke it in GitHub settings.\n`, { mode: 0o600 });
+      fs.writeFileSync(accessFile, `# Private portfolio studio access\n\nOpen the running portfolio and append **/admin** to its address.\n\n- Username: **hazem**\n- Temporary password: \`${password}\`\n\nChange this password in **Settings → Security** after signing in. This file is not served by the website and is excluded from the source archive. Do not upload it to a repository.\n\nIf a browser blocks cookies inside the embedded preview, open the preview in a new tab.\n\nDo not commit or share authentication credentials. Revoke any token that has been exposed in a conversation.\n`, { mode: 0o600 });
     }
   }
   const app = express();

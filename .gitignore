@@ -4,8 +4,13 @@ data/
 private/
 .env
 .env.*
+!.env.example
 *.sqlite*
 *.log
-__pycache__/
 test-results/
 playwright-report/
+
+# This is the only database allowed in the public source: content only, no accounts.
+!content/portfolio-public.sqlite
+public/portfolio.snapshot.json
+public/deployment-health.json

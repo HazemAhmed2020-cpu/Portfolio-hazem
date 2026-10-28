@@ -1,3 +1,30 @@
+# Vercel edition — DB Browser workflow
+
+The owner chose a **public static Vercel deployment**, managed through DB Browser for SQLite. It does not offer an online Studio, file-upload API, server inbox, or automatic contact-form delivery. Contact is by email and telephone links. The original server-backed edition remains available separately and its private data was not replaced.
+
+- Public editable file: `content/portfolio-public.sqlite` — public content only; never secrets, accounts, sessions, inboxes, or private drafts.
+- Vercel build: `npm run build:static`; output directory: `dist`; framework: Vite. `vercel.json` supplies the routing and sandbox headers.
+- Edit the public file in DB Browser → **Write Changes** → **Close Database** → commit to GitHub → wait for Vercel’s deployment.
+- Hiding a row with `published=0` does not make it secret: the SQLite file is in a public repository.
+- The JSON used by the website is generated **at build time**. No function writes a database to temporary Vercel storage.
+- Node.js is used for the build/local preview, not as an always-running backend on Vercel.
+
+[Detailed DB Browser instructions (Arabic)](docs/DB_BROWSER_AR.md)
+
+```bash
+npm ci
+npm run build:static
+npm run preview:static
+```
+
+The public page uses `/portfolio.snapshot.json`. `/api/portfolio` is a read-only rewrite to that snapshot; `/api/health` explicitly reports static mode with Studio/inbox disabled. `/admin` explains offline editing instead of pretending to provide a working login. Email links open the visitor’s email app; the site does not claim a message was sent or stored.
+
+For the original Node.js edition, stop the static preview and run `npm start` on a persistent Node host. The existing `data/portfolio.sqlite` is private and is **not** the file to commit or use in the public workflow. `npm run content:init` is only for first-time setup from public seed content and refuses to overwrite an existing public file.
+
+---
+
+## Original server-backed edition (not the static Vercel runtime)
+
 # Portfolio-hazem
 
 Hazem Ahmed’s English-language full-stack developer portfolio: a light visual theme, original portrait, motion controls, selected work, training, résumé, email/telephone contact, and a password-protected content Studio.
