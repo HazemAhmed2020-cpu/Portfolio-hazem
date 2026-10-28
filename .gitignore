@@ -1,0 +1,11 @@
+node_modules/
+dist/
+data/
+private/
+.env
+.env.*
+*.sqlite*
+*.log
+__pycache__/
+test-results/
+playwright-report/

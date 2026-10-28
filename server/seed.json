@@ -1,0 +1,353 @@
+{
+  "profile": {
+    "name": "Hazem Ahmed",
+    "fullName": "Hazem Ahmed Ismaeil Seif El-Din",
+    "role": "Full-Stack Developer",
+    "location": "Qalyubia, Egypt",
+    "email": "hazemsaifallden2040@gmail.com",
+    "phone": "+201226460621",
+    "github": "https://github.com/HazemAhmed2020-cpu",
+    "linkedin": "https://www.linkedin.com/in/hazem-ahmed-489196331",
+    "resume": "/resume/Hazem_Ahmed_CV.pdf",
+    "photo": "/images/hazem-portrait.webp",
+    "available": true,
+    "availability": "Open to full-stack opportunities",
+    "heroHeading": "Thoughtful code.",
+    "heroSubheading": "Real-world",
+    "heroAccent": "impact.",
+    "intro": "I'm Hazem, a full-stack developer building practical, people-focused applications. I'm currently learning AI and applying what I learn to the projects I'm building.",
+    "about": "I build web applications that help people learn, collaborate, and get things done. From educational platforms to tools for my college community, I care about making software useful and approachable.",
+    "aboutMore": "I'm a Computer Science graduate from the University of the People and a current CS student at East Port Said National University. I've completed Web Development using MEAN Stack training. Alongside full-stack development, I'm actively learning AI and integrating what I learn into my current applications—building practical features while keeping pace with evolving technology.",
+    "frontend": [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "HTML & CSS",
+      "Vite",
+      "Angular (MEAN training)"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "MongoDB",
+      "Python"
+    ],
+    "tools": [
+      "Docker",
+      "Git & GitHub",
+      "SQL",
+      "C++",
+      "Java",
+      "UI/UX design",
+      "AI fundamentals (learning)"
+    ],
+    "education": [
+      {
+        "school": "University of the People",
+        "degree": "B.Sc. Computer Science",
+        "dates": "2022 — 2026",
+        "note": "Graduated September 2026"
+      },
+      {
+        "school": "East Port Said National University",
+        "degree": "Faculty of Computer Science",
+        "dates": "2024 — Present",
+        "note": "Third-year student"
+      }
+    ],
+    "achievements": [
+      "Rise Challenge finalist · 2023",
+      "DECI scholarship recipient · 2023",
+      "Egyptian Beaver Competition · 370/400"
+    ]
+  },
+  "projects": [
+    {
+      "id": "confit-ecommerce",
+      "title": "CONFIT. Commerce with character.",
+      "shortTitle": "CONFIT E-commerce Platform",
+      "category": "E-commerce",
+      "description": "A full-stack fashion e-commerce application connecting product discovery, shopping carts, checkout, and brand management.",
+      "details": "CONFIT is a fashion e-commerce application with a React and TypeScript frontend and a Python/FastAPI backend. Its repository includes product browsing and detail screens, cart state, checkout validation, order-related services, and brand/admin areas. My résumé lists my frontend contribution to CONFIT; the project stack shown here describes the wider application. Styling and virtual-try-on modules are also present in the repository, but their live operation was not tested for this portfolio.",
+      "role": "Frontend contribution",
+      "year": "2026",
+      "stack": [
+        "React",
+        "TypeScript",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "highlights": [
+        "A structured product catalog and product-detail experience.",
+        "Shopping cart state and a checkout flow with frontend validation.",
+        "Python/FastAPI services and a React/TypeScript frontend.",
+        "Brand and administrative areas are included in the public source.",
+        "Payment integrations are documented in demo mode; live payment processing is not claimed."
+      ],
+      "repo": "",
+      "showSource": false,
+      "demo": "https://confit-a.vercel.app/",
+      "image": "/images/confit-commerce-repo.jpg",
+      "demoMode": "paused",
+      "imageKind": "repository",
+      "imageCaption": "",
+      "artwork": "commerce",
+      "sourceType": "github",
+      "sourceNote": "Public source reviewed in OmarAhmed-123/CONFIT_A. This is distinct from the earlier static CONFIT UI/UX prototype. The repository’s Vercel homepage displayed “Deployment Paused” when checked on 28 October 2026, so it is not offered as a working demo. The cover is cropped from the repository’s published 17 October UI-audit capture. No live purchase or authenticated AI workflow was tested.",
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "madar",
+      "title": "Madar. Learning with purpose.",
+      "shortTitle": "Madar Educational Platform",
+      "category": "Full-stack",
+      "description": "An independently developed learning platform for teacher discovery, lesson access, exams, subscriptions, and educational opportunities—all in a dedicated student workspace.",
+      "details": "I developed Madar to organize the student learning journey in one place. The signed-in workspace brings together teacher discovery by subject, language, grade and rating; areas for recorded lessons and upcoming live classes; an exam area; and subscription and payment-status views. Separate sections cover educational scholarships and the student profile, including learning-performance and notification settings. The platform also gives me a practical setting for applying the AI concepts I am learning. This walkthrough focuses on the observable student experience, using a newly registered test account.",
+      "role": "Independent developer",
+      "year": "",
+      "stack": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "highlights": [
+        "Student registration and a server-authenticated workspace, verified with a dedicated synthetic review account.",
+        "Teacher-discovery filters for subject, language, school grade, and rating.",
+        "Dedicated areas for recorded videos, upcoming live classes, and exams, with subscription-aware access messaging.",
+        "An overview of active subscriptions, remaining classes, and payment status.",
+        "A scholarship-discovery interface with country/subject filters and a saved-opportunities section.",
+        "Student profile sections for learning performance, notifications, and privacy settings."
+      ],
+      "repo": "",
+      "showSource": true,
+      "demo": "https://madar-platform-lyart.vercel.app/#/",
+      "image": "/images/madar-student-dashboard.webp",
+      "demoMode": "login",
+      "imageKind": "capture",
+      "imageCaption": "STUDENT WORKSPACE · SIGN-IN REQUIRED",
+      "artwork": "madar",
+      "sourceType": "personal",
+      "sourceNote": "Captured after creating a real, server-authenticated student test account in first secondary, then confirming a fresh sign-in. The screenshots are genuine application screens, not a mockup. At review time the account had no subscriptions, and teacher and scholarship lists were empty; no content, totals, or transactions were fabricated. Paid lessons, live broadcasts, exam submissions, payments, and AI outputs were not tested. The listed frontend languages were checked in the delivered client assets.",
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "ctpm",
+      "title": "CTPM. A more connected community.",
+      "shortTitle": "CTPM — EPNU Community Management",
+      "category": "Full-stack",
+      "description": "A supervisor-facing platform for managing community tasks and performance, built around the needs of my college community.",
+      "details": "CTPM brings community task and performance management into a dedicated application for supervisors. Developed as part of my technical volunteering for my college community, the project supports a more organized approach to task coordination and communication. Its public deployment identifies itself as CTPM and opens the supervisor sign-in screen.",
+      "role": "Developer · Technical volunteer",
+      "year": "",
+      "stack": [
+        "TypeScript",
+        "JavaScript",
+        "PostgreSQL",
+        "Docker",
+        "Shell"
+      ],
+      "highlights": [
+        "Community task and performance management.",
+        "Supervisor-only entry to the management interface.",
+        "Built around practical college-community coordination needs.",
+        "Task coordination and communication workflows described in my résumé."
+      ],
+      "repo": "",
+      "showSource": true,
+      "demo": "https://epnu-management.vercel.app/",
+      "image": "/images/ctpm-live.jpg",
+      "demoMode": "login",
+      "imageKind": "capture",
+      "imageCaption": "",
+      "artwork": "platform",
+      "sourceType": "personal",
+      "sourceNote": "The supplied EPNU deployment identifies itself as CTPM and redirects to its supervisor sign-in page. The cover is an actual public-page capture. Technology and background information come from my résumé; no authenticated dashboard actions were performed.",
+      "featured": false,
+      "published": true
+    },
+    {
+      "id": "symplelegal",
+      "title": "SympleLegal. A clearer first step.",
+      "shortTitle": "SympleLegal — Legal Services Platform",
+      "category": "Web app",
+      "description": "A legal-services platform demo with lawyer discovery, professional profiles, and a community for clients, legal professionals, students, and law firms.",
+      "details": "SympleLegal presents a more approachable starting point for finding legal support and building a professional presence. The public demo includes legal-specialty browsing, sample lawyer profiles, role-specific entry points for clients, lawyers, students and firms, and a community forum. The deployment clearly labels its content as demonstration data rather than a live professional directory.",
+      "role": "Web application development",
+      "year": "2026",
+      "stack": [],
+      "highlights": [
+        "Lawyer discovery organized around legal specialties.",
+        "Distinct entry points for clients, lawyers, students/graduates, and law firms.",
+        "Professional-profile and community-forum views visible in the public demo.",
+        "Clear demo-data labeling and a distinction between platform content and legal advice."
+      ],
+      "repo": "",
+      "showSource": true,
+      "demo": "https://lawyers-startup.vercel.app/",
+      "image": "/images/symplelegal-live.jpg",
+      "demoMode": "demo",
+      "imageKind": "capture",
+      "imageCaption": "",
+      "artwork": "legal",
+      "sourceType": "personal",
+      "sourceNote": "The cover and description are based on the supplied public demo. Lawyer entries and verification markers are explicitly labeled as demonstration data on the site. No private communications, verification process, or security guarantees were independently tested. Source code and a confirmed technology stack have not been supplied.",
+      "featured": false,
+      "published": true
+    },
+    {
+      "id": "hazematic",
+      "title": "Hazematic. Less repetitive work.",
+      "shortTitle": "Hazematic — Content & Career Automation",
+      "category": "Automation",
+      "description": "An automation project for generating posts, publishing them to Facebook, and discovering job opportunities on LinkedIn.",
+      "details": "I built Hazematic to bring together two practical automation workflows: creating and publishing Facebook posts, and searching LinkedIn for job opportunities. The aim is to reduce repetitive manual work around content publishing and job discovery. The supplied application opens a branded sign-in page; its automation workspace requires an account.",
+      "role": "Automation development",
+      "year": "2026",
+      "stack": [],
+      "highlights": [
+        "Post-generation workflow.",
+        "Automated publishing to Facebook.",
+        "LinkedIn job-discovery workflow.",
+        "A signed-in workspace for accessing the automation tools."
+      ],
+      "repo": "",
+      "showSource": true,
+      "demo": "https://project-architecture-of-l-f.vercel.app/login",
+      "image": "/images/hazematic-live.jpg",
+      "demoMode": "login",
+      "imageKind": "capture",
+      "imageCaption": "",
+      "artwork": "automation",
+      "sourceType": "personal",
+      "sourceNote": "Automation capabilities are described by me as the developer. The cover is an actual capture of the public Hazematic sign-in page. No Facebook publishing, LinkedIn search, account registration, or authenticated actions were run during the portfolio review. No technology stack was guessed.",
+      "featured": false,
+      "published": true
+    },
+    {
+      "id": "zoomtech",
+      "title": "ZoomTech. Learn by doing.",
+      "shortTitle": "ZoomTech Interactive Programming",
+      "category": "Frontend",
+      "description": "An Arabic programming-learning experience with interactive lessons, quizzes, exercises, and a Python playground running in the browser.",
+      "details": "A React and TypeScript learning application for programming and Python fundamentals. The Basics12 branch contains modular lesson screens, interactive quizzes, homework activities, a calculator example, and a browser-based Python runner powered by Pyodide. A chat interface includes a Gemini API integration path with a local curriculum-knowledge fallback. The portfolio preview intentionally disables live AI requests and uses that local fallback.",
+      "role": "Frontend development · Educational software",
+      "year": "2026",
+      "stack": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Pyodide",
+        "Motion"
+      ],
+      "highlights": [
+        "Component-based React and TypeScript interface with Arabic, right-to-left learning content.",
+        "Interactive quizzes, exercises, and a calculator example with immediate UI feedback.",
+        "Python execution in the browser using Pyodide—not a Python backend.",
+        "Chat interface with curriculum-based fallback answers. Live AI is disabled in this isolated preview."
+      ],
+      "repo": "https://github.com/HazemAhmed2020-cpu/ZoomTech/tree/Basics12",
+      "showSource": true,
+      "demo": "/demos/zoomtech/index.html",
+      "image": "/images/zoomtech.jpg",
+      "demoMode": "preview",
+      "imageKind": "capture",
+      "imageCaption": "",
+      "artwork": "confit",
+      "sourceType": "github",
+      "sourceNote": "Source reviewed from the Basics12 branch, not the README-only main branch. This portfolio hosts an isolated preview of the public build with embedded credentials removed and live AI disabled. The original Pages URL currently renders only a README. The preview is not a production deployment.",
+      "featured": false,
+      "published": true
+    }
+  ],
+  "certificates": [
+    {
+      "id": "nti-fullstack",
+      "title": "Web Development using MEAN Stack",
+      "issuer": "National Telecommunication Institute",
+      "shortIssuer": "NTI",
+      "year": "2026",
+      "type": "Full-Stack Web Development Training",
+      "description": "Completed Web Development using MEAN Stack training at NTI. MEAN combines MongoDB, Express.js, Angular, and Node.js. The certificate document can be attached separately.",
+      "file": "",
+      "url": "",
+      "published": true
+    },
+    {
+      "id": "iti-react",
+      "title": "Web Development with React.js",
+      "issuer": "Information Technology Institute",
+      "shortIssuer": "ITI",
+      "year": "2026",
+      "type": "Web Development Training",
+      "description": "React.js web-development training, listed in my résumé.",
+      "file": "",
+      "url": "",
+      "published": true
+    },
+    {
+      "id": "nti-uiux",
+      "title": "UI/UX Design",
+      "issuer": "NTI Scholarship",
+      "shortIssuer": "NTI",
+      "year": "2026",
+      "type": "Design Certification",
+      "description": "UI/UX design certification through an NTI scholarship, listed in my résumé.",
+      "file": "",
+      "url": "",
+      "published": true
+    },
+    {
+      "id": "iti-python",
+      "title": "Python · Level 1",
+      "issuer": "Information Technology Institute",
+      "shortIssuer": "ITI",
+      "year": "2026",
+      "type": "Python Certification",
+      "description": "Python Level 1 certification, listed in my résumé.",
+      "file": "",
+      "url": "",
+      "published": true
+    },
+    {
+      "id": "mcit-cpp",
+      "title": "Advanced C++",
+      "issuer": "MCIT Training Grant",
+      "shortIssuer": "MCIT",
+      "year": "",
+      "type": "45-hour Training",
+      "description": "45 hours of advanced C++ training through an MCIT training grant, listed in my résumé.",
+      "file": "",
+      "url": "",
+      "published": true
+    },
+    {
+      "id": "udacity",
+      "title": "Next Generation Tech Booster",
+      "issuer": "Udacity Scholarship Program",
+      "shortIssuer": "U",
+      "year": "2023",
+      "type": "Scholarship Program",
+      "description": "Next Generation Tech Booster scholarship program, listed in my résumé.",
+      "file": "",
+      "url": "",
+      "published": true
+    },
+    {
+      "id": "africa-matters",
+      "title": "Youth Advocacy Program",
+      "issuer": "Africa Matters",
+      "shortIssuer": "AM",
+      "year": "",
+      "type": "Program Graduate",
+      "description": "Graduate of the Africa Matters Youth Advocacy Program, listed in my résumé.",
+      "file": "",
+      "url": "",
+      "published": true
+    }
+  ]
+}
