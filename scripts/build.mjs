@@ -22,8 +22,8 @@ try{
   const content=readPublicContentDb(path.join(root,'content/portfolio-public.sqlite'));
   await validateLocalAssets(content);
   const builtAt=new Date().toISOString();
-  const snapshot={...content,deploymentMode:'static',contactDelivery:'email-link',capabilities:{studio:false,inbox:false,uploads:false},updatedAt:builtAt};
-  const health={status:'ok',mode:'static',contentSource:'public-sqlite-build',version:'sqlite-static-v1',studio:false,inbox:false,commit:process.env.VERCEL_GIT_COMMIT_SHA||null,builtAt};
+  const snapshot={...content,deploymentMode:'static',contactDelivery:'formsubmit',capabilities:{studio:false,inbox:false,uploads:false,contactForm:true},updatedAt:builtAt};
+  const health={status:'ok',mode:'static',contentSource:'public-sqlite-build',version:'sqlite-contact-form-v1',contactDelivery:'formsubmit',contactForm:true,studio:false,inbox:false,commit:process.env.VERCEL_GIT_COMMIT_SHA||null,builtAt};
   await fs.writeFile(outputFiles[0],JSON.stringify(snapshot));await fs.writeFile(outputFiles[1],JSON.stringify(health));
  }
  console.log(`Building portfolio in ${mode} mode.`);

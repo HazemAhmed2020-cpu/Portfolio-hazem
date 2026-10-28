@@ -13,11 +13,12 @@ try{
  await expect(page.locator('.project-card')).toHaveCount(6);
  await expect(page.locator('img[src="/images/hazem-portrait.webp"]')).toBeVisible();
  await expect(page.locator('.studio-link')).toHaveCount(0);
- await expect(page.locator('.contact-form')).toHaveCount(0);
- await expect(page.getByRole('button',{name:'Send message',exact:true})).toHaveCount(0);
- const email=page.getByRole('link',{name:/Email me/});await expect(email).toHaveAttribute('href','mailto:hazemsaifallden2040@gmail.com');
- await expect(page.getByRole('link',{name:'Call me',exact:false})).toHaveAttribute('href',/^tel:\+20\d{10}$/);
- await expect(page.locator('#contact')).toContainText('does not collect or store messages');
+ await expect(page.locator('.contact-form')).toHaveCount(1);
+ await expect(page.getByRole('button',{name:'Send message',exact:true})).toBeVisible();
+ await expect(page.getByRole('link',{name:/Email me/})).toHaveCount(0);
+ await expect(page.locator('.contact-email')).toHaveAttribute('href','mailto:hazemsaifallden2040@gmail.com');
+ await expect(page.getByRole('link',{name:'Call Hazem Ahmed',exact:true})).toHaveAttribute('href',/^tel:\+20\d{10}$/);
+ await expect(page.locator('#contact')).toContainText('FormSubmit');
  await expect(page.locator('#contact')).not.toContainText('Saved securely to my inbox');
  const confit=page.locator('.project-card').filter({has:page.getByRole('heading',{name:'CONFIT. Commerce with character.',exact:true})});
  await expect(confit.getByRole('link',{name:'View source',exact:true})).toHaveCount(0);
@@ -26,7 +27,7 @@ try{
  await page.getByRole('button',{name:/View all 7 credentials/}).click();await expect(page.locator('.credential-card')).toHaveCount(7);
  await expect(page.locator('img[src="/images/africa-matters-logo.png"]')).toBeVisible();
  await page.goto('/admin',{waitUntil:'networkidle'});await expect(page.getByRole('heading',{name:'Content is managed offline.'})).toBeVisible();await expect(page.locator('input[type="password"]')).toHaveCount(0);
- const health=await(await context.request.get('/api/health')).json();if(health.mode!=='static'||health.studio!==false||health.inbox!==false)throw new Error('Static capabilities are not explicit.');
+ const health=await(await context.request.get('/api/health')).json();if(health.mode!=='static'||health.studio!==false||health.inbox!==false||health.contactForm!==true||health.contactDelivery!=='formsubmit')throw new Error('Static capabilities are not explicit.');
  const publicData=await(await context.request.get('/api/portfolio')).json();if(publicData.deploymentMode!=='static'||publicData.projects.length!==6)throw new Error('Read-only content route is incorrect.');
  for(const route of ['/private/ADMIN_ACCESS.md','/data/portfolio.sqlite','/content/portfolio-public.sqlite'])if((await context.request.get(route)).status()!==404)throw new Error('A non-public runtime/source path is being served: '+route);
  const demo=await context.request.get('/demos/zoomtech/index.html');const csp=demo.headers()['content-security-policy']||'';if(!csp.includes('sandbox allow-scripts')||csp.includes('allow-same-origin'))throw new Error('ZoomTech isolation is not preserved.');
@@ -36,6 +37,6 @@ try{
  if(apiRequests.length)throw new Error('The static frontend unexpectedly requested backend APIs.');
  if(errors.length)throw new Error(errors.join('\n'));
  console.log('PASS: static public portfolio works even with all /api requests blocked.');
- console.log('PASS: 6 projects, 7 credentials, preserved images/logos/phone, honest email/call contact and offline Studio notice.');
+ console.log('PASS: 6 projects, 7 credentials, preserved images/logos/phone, in-page contact form, phone link, and offline Studio notice (no test mail submitted).');
  console.log('PASS: explicit static health, private-file 404s, demo sandbox, 320/390/768px layouts; zero browser errors.');
 }finally{await browser.close();}

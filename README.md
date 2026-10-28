@@ -1,6 +1,6 @@
 # Vercel edition — DB Browser workflow
 
-The owner chose a **public static Vercel deployment**, managed through DB Browser for SQLite. It does not offer an online Studio, file-upload API, server inbox, or automatic contact-form delivery. Contact is by email and telephone links. The original server-backed edition remains available separately and its private data was not replaced.
+The owner chose a **public static Vercel deployment**, managed through DB Browser for SQLite. It does not offer an online Studio, file-upload API, or server inbox. The in-page contact form sends to the FormSubmit email relay via AJAX without navigating away; email and telephone links remain available as alternatives. The original server-backed edition remains available separately and its private data was not replaced.
 
 - Public editable file: `content/portfolio-public.sqlite` — public content only; never secrets, accounts, sessions, inboxes, or private drafts.
 - Vercel build: `npm run build:static`; output directory: `dist`; framework: Vite. `vercel.json` supplies the routing and sandbox headers.
@@ -17,7 +17,7 @@ npm run build:static
 npm run preview:static
 ```
 
-The public page uses `/portfolio.snapshot.json`. `/api/portfolio` is a read-only rewrite to that snapshot; `/api/health` explicitly reports static mode with Studio/inbox disabled. `/admin` explains offline editing instead of pretending to provide a working login. Email links open the visitor’s email app; the site does not claim a message was sent or stored.
+The public page uses `/portfolio.snapshot.json`. `/api/portfolio` is a read-only rewrite to that snapshot; `/api/health` explicitly reports static mode with Studio/inbox disabled. `/admin` explains offline editing instead of pretending to provide a working login. The form displays an inline submission result only after explicit provider acceptance. Activation, rejection, timeout, and network failures retain the visitor’s text and are not shown as sent messages. HTTP 200 alone is not sufficient. See [contact-form details](docs/CONTACT_FORM_AR.md).
 
 For the original Node.js edition, stop the static preview and run `npm start` on a persistent Node host. The existing `data/portfolio.sqlite` is private and is **not** the file to commit or use in the public workflow. `npm run content:init` is only for first-time setup from public seed content and refuses to overwrite an existing public file.
 
@@ -98,3 +98,9 @@ Tests use temporary databases and a fake SMTP transport. They do not send real G
 ## Content and attribution
 
 The owner chose to publish the portfolio’s profile, résumé, portrait, contact details, and project descriptions. Third-party provider logos, project captures, fonts, and dependencies retain their respective rights and attribution. No broader license for those assets is implied by making this source repository public.
+
+## In-page email delivery
+
+The static/Vercel contact form sends directly to FormSubmit’s documented AJAX endpoint for the owner’s public profile email. The owner completed the one-time email activation. There is no Gmail password or email API secret in the client code, no navigation to an email composer, and no on-site message database. The provider may retain submissions under its own policy; the form links that policy. Service acceptance is not an inbox-placement guarantee. If the profile email is changed, the new address may need activation.
+
+Only explicit `success=true` (or the string `"true"`) is treated as accepted. A string `"false"`, an activation-required reply, HTTP errors, and ambiguous responses are never shown as success. Requests are not automatically retried, and fields stay populated on error. The original Node edition keeps its separate `/api/contact` and Studio/Gmail behavior.
