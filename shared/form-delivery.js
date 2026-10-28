@@ -1,6 +1,6 @@
 // Public, fixed-recipient form relay. No Gmail password, API secret, CC, webhook,
 // autoresponder, or navigation target is accepted from visitor-controlled fields.
-export const CONTACT_TOPICS=['Full-time role','Internship','Collaboration','Other'];
+export const CONTACT_TOPICS=['Full-time role','Part-time role','Internship','Collaboration','Other'];
 export const FORM_PROVIDER='FormSubmit';
 export const FORM_PRIVACY_URL='https://formsubmit.co/privacy.pdf';
 export class ContactDeliveryError extends Error{
