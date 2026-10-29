@@ -40,3 +40,9 @@ test('Invalid fields and honeypot entries are rejected before any email request'
  for(const invalid of [{name:''},{email:'invalid'},{opportunity:'Injected subject\r\nBcc: x'},{message:'short'},{website:'bot-entry'}])assert.throws(()=>formPayload({...fields,...invalid}));
  assert.throws(()=>formEndpoint('not an email'));
 });
+
+test('Part-time roles are accepted and included in the email subject',()=>{
+ const body=formPayload({...fields,opportunity:'Part-time role'});
+ assert.equal(body.opportunity,'Part-time role');
+ assert.equal(body._subject,'Portfolio inquiry — Part-time role');
+});

@@ -42,7 +42,7 @@ export const portfolioSchema = z.object({
 }).refine(value => new Set(value.projects.map(x => x.id)).size === value.projects.length && new Set(value.certificates.map(x => x.id)).size === value.certificates.length, 'Each item must have a unique ID.');
 export const messageSchema = z.object({
   name: required(120), email: z.email().max(200),
-  opportunity: z.enum(['Full-time role', 'Internship', 'Collaboration', 'Other']),
+  opportunity: z.enum(['Full-time role', 'Part-time role', 'Internship', 'Collaboration', 'Other']),
   message: text(5000).min(15, 'Please write at least 15 characters.'),
   website: text(500).optional().default('')
 });
