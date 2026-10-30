@@ -44,7 +44,7 @@ test('Extra private tables and credential-like literals are rejected',()=>fixtur
 
 test('The committed content file and Vercel configuration are explicitly static',()=>{
  const content=readPublicContentDb(new URL('../content/portfolio-public.sqlite',import.meta.url).pathname);
- assert.equal(content.projects.length,9);assert.equal(content.certificates.length,7);assert.equal(content.profile.photo,'/images/hazem-portrait.webp');assert(content.profile.phone);
+ assert.equal(content.projects.length,7);assert.equal(content.certificates.length,7);assert.equal(content.profile.photo,'/images/hazem-portrait.webp');assert(content.profile.phone);
  const config=JSON.parse(fs.readFileSync(new URL('../vercel.json',import.meta.url),'utf8'));
  assert.equal(config.framework,'vite');assert.equal(config.buildCommand,'npm run build:static');assert.equal(config.outputDirectory,'dist');
  const zoom=config.headers.find(item=>item.source.startsWith('/demos/zoomtech')).headers.find(header=>header.key==='Content-Security-Policy').value;
